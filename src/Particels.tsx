@@ -26,7 +26,7 @@ function Particels() {
           },
           onHover: {
             enable: true,
-            mode: "repulse",
+            mode: "attract",
           },
         },
         modes: {
@@ -71,7 +71,7 @@ function Particels() {
           value: 0.8,
         },
         shape: {
-          type: "circle",
+          type: "square",
         },
         size: {
           value: { min: 1, max: 3 },
