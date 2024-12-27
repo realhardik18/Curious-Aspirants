@@ -2,6 +2,7 @@ import React from 'react'
 import Particles from 'react-tsparticles'
 import { loadSlim } from "tsparticles-slim"
 import type { Engine } from 'tsparticles-engine'
+import Navbar from './Navbar'
 
 const Home: React.FC = () => {
   const particlesInit = React.useCallback(async (engine: Engine) => {
@@ -82,18 +83,7 @@ const Home: React.FC = () => {
           detectRetina: true,
         }}
       />
-      <header className="py-6 px-4 sm:px-6 lg:px-8 bg-black bg-opacity-50 backdrop-blur-sm border-b border-white border-opacity-10">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-white">DPP Maker</h1>
-          <nav>
-            <ul className="flex space-x-6">
-              <li><a href="#features" className="text-white hover:text-gray-300 transition duration-300">Features</a></li>
-              <li><a href="#about" className="text-white hover:text-gray-300 transition duration-300">About</a></li>
-              <li><a href="#contact" className="text-white hover:text-gray-300 transition duration-300">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Navbar />
       <main className="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 z-10 relative">
         {/* Hero Text Section */}
         <div className="text-center mt-12 mb-6 z-20 relative">
@@ -102,7 +92,7 @@ const Home: React.FC = () => {
         </div>
         <div className="text-center mb-12">
           <a
-            href="#get-started"
+            href="/generate"
             className="inline-block bg-white text-black font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 hover:bg-gray-200 shadow-[0_0_15px_rgba(255,255,255,0.5)]"
           >
             Generate PDF Now
