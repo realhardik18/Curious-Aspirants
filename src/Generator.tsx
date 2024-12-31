@@ -4,23 +4,184 @@ import Navbar from './Navbar';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Generator: React.FC = () => {
-  const subjects = ['Mathematics', 'Physics', 'Chemistry'];
+  const subjects = ['Mathematics', 'Physics', 'Chemistry','Biology'];
   const subSubjects = {
     Mathematics: {
-      Coordinate: ['Straight Lines', 'Circles', 'Parabola', 'Ellipse', 'Hyperbola'],
-      Algebra: ['Quadratic Equations', 'Progressions', 'Binomial Theorem', 'Complex Numbers'],
-      Trigonometry: ['Trigonometric Ratios', 'Inverse Trigonometry', 'Properties of Triangles'],
-    },
+      Coordinate: ['Straight Lines', 'Circles', 'Parabola', 'Ellipse', 'Hyperbola', '3D Geometry'],
+      Algebra: [
+        'Quadratic Equations and Inequalities', 
+        'Sequences and Series', 
+        'Binomial Theorem', 
+        'Complex Numbers', 
+        'Matrices and Determinants', 
+        'Permutations and Combinations', 
+        'Logarithm', 
+        'Mathematical Induction'
+      ],
+      Trigonometry: [
+        'Trigonometric Functions and Equations', 
+        'Trigonometric Ratios and Identities', 
+        'Inverse Trigonometric Functions', 
+        'Properties of Triangles', 
+        'Height and Distance'
+      ],
+      Calculus: [
+        'Limits, Continuity, and Differentiability', 
+        'Differentiation', 
+        'Application of Derivatives', 
+        'Indefinite Integrals', 
+        'Definite Integration', 
+        'Area Under the Curves', 
+        'Differential Equations'
+      ],
+      Miscellaneous: [
+        'Sets and Relations', 
+        'Functions', 
+        'Probability', 
+        'Statistics', 
+        'Mathematical Reasoning'
+      ],
+    },    
     Physics: {
-      Mechanics: ['Kinematics', 'Laws of Motion', 'Work, Power, Energy', 'Rotational Motion'],
-      Thermodynamics: ['Heat Transfer', 'Thermal Expansion', 'Thermodynamic Processes'],
-      Electrodynamics: ['Current Electricity', 'Electrostatics', 'Magnetism'],
-    },
+      Mechanics: [
+        'Units and Measurements', 
+        'Motion in a Straight Line', 
+        'Motion in a Plane', 
+        'Laws of Motion', 
+        'Work, Power, and Energy', 
+        'Center of Mass', 
+        'Gravitation', 
+        'Rotational Motion', 
+        'Circular Motion', 
+        'Properties of Matter'
+      ],
+      ThermodynamicsAndHeat: [
+        'Heat and Thermodynamics'
+      ],
+      Electrodynamics: [
+        'Electrostatics', 
+        'Current Electricity', 
+        'Capacitor', 
+        'Magnetics', 
+        'Magnetic Properties of Matter', 
+        'Electromagnetic Induction', 
+        'Alternating Current'
+      ],
+      Optics: [
+        'Geometrical Optics', 
+        'Wave Optics'
+      ],
+      ModernPhysics: [
+        'Atoms and Nuclei', 
+        'Dual Nature of Radiation', 
+        'Electronic Devices'
+      ],
+      WavesAndOscillations: [
+        'Simple Harmonic Motion', 
+        'Waves'
+      ],
+      CommunicationAndElectromagnetic: [
+        'Electromagnetic Waves', 
+        'Communication Systems'
+      ],
+      Miscellaneous: [
+        'Vector Algebra'
+      ]
+    },    
     Chemistry: {
-      Organic: ['Hydrocarbons', 'Alcohols', 'Aldehydes', 'Carboxylic Acids'],
-      Inorganic: ['Periodic Table', 'Chemical Bonding', 'Coordination Compounds'],
-      Physical: ['Mole Concept', 'Thermochemistry', 'Electrochemistry'],
-    },
+      PhysicalChemistry: [
+        'Chemical Bonding and Molecular Structure', 
+        'Chemical Equilibrium', 
+        'Chemical Kinetics and Nuclear Chemistry', 
+        'Electrochemistry', 
+        'Ionic Equilibrium', 
+        'Gaseous State', 
+        'Solutions', 
+        'Thermodynamics', 
+        'Surface Chemistry'
+      ],
+      OrganicChemistry: [
+        'Basics of Organic Chemistry', 
+        'Hydrocarbons', 
+        'Alcohols, Phenols, and Ethers', 
+        'Aldehydes, Ketones, and Carboxylic Acids', 
+        'Haloalkanes and Haloarenes', 
+        'Compounds Containing Nitrogen', 
+        'Biomolecules', 
+        'Polymers', 
+        'Practical Organic Chemistry', 
+        'Chemical in Everyday Life'
+      ],
+      InorganicChemistry: [
+        'Coordination Compounds', 
+        'd and f Block Elements', 
+        'Isolation of Elements', 
+        'p Block Elements', 
+        'S Block Elements', 
+        'Periodic Table and Periodicity', 
+        'Redox Reactions', 
+        'Salt Analysis', 
+        'Solid State', 
+        'Structure of Atom'
+      ],
+      Miscellaneous: [
+        'Some Basic Concepts of Chemistry', 
+        'Environmental Chemistry'
+      ]
+    },        
+      Biology: {
+        Botany: [
+          'Anatomy of Flowering Plants',
+          'Biodiversity and Conservation',
+          'Biological Classification',
+          'Morphology of Flowering Plants',
+          'Photosynthesis in Higher Plants',
+          'Plant Growth and Development',
+          'Plant Kingdom',
+          'Respiration in Plants',
+          'Sexual Reproduction in Flowering Plants',
+          'Transport in Plants',
+          'Mineral Nutrition',
+        ],
+        Zoology: [
+          'Animal Kingdom',
+          'Structural Organisation in Animals',
+          'Human Reproduction',
+          'Locomotion and Movement',
+          'Body Fluids and Its Circulation',
+          'Breathing and Exchange of Gases',
+          'Neural Control and Coordination',
+          'Excretory Products and Their Elimination',
+          'Chemical Coordination and Integration',
+          'Reproductive Health',
+        ],
+        Ecology: [
+          'Ecosystem',
+          'Organisms and Populations',
+          'Environmental Issues',
+          'Biodiversity and Conservation',
+        ],
+        Genetics: [
+          'Principles of Inheritance and Variation',
+          'Molecular Basis of Inheritance',
+          'Evolution',
+        ],
+        Biotechnology: [
+          'Biotechnology Principles and Processes',
+          'Biotechnology and Its Applications',
+        ],
+        HumanWelfare: [
+          'Microbes in Human Welfare',
+          'Strategies for Enhancement in Food Production',
+          'Human Health and Diseases',
+        ],
+        Biochemistry: [
+          'Biomolecules',
+          'Cell: The Unit of Life',
+          'Cell Cycle and Cell Division',
+        ],
+      }    
+    
   };
 
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
@@ -75,7 +236,7 @@ const Generator: React.FC = () => {
           {/* Subject Selection */}
           <div className="mb-8 w-full">
             <label className="block text-gray-300 mb-2">Select a Subject</label>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
               {subjects.map((subject) => (
                 <button
                   key={subject}
